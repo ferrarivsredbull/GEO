@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>South America Geography Quiz</title>
+  <style>
+    /* Add some basic styling for better appearance */
+    .question {
+      margin-bottom: 10px;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>South America Geography Quiz</h1>
+
+  <div class="question">
+    <label>1. Which desert is known as one of the driest places on Earth and is located in South America?</label>
+    <input type="text" id="q1">
+    <button onclick="checkAnswer(1)">Check</button>
+    <p id="result1"></p>
+  </div>
+
+  <div class="question">
+    <label>2. What is the name of the region shared between Argentina and Chile, known for its diverse landscapes, including mountains, grasslands, and coastlines?</label>
+    <input type="text" id="q2">
+    <button onclick="checkAnswer(2)">Check</button>
+    <p id="result2"></p>
+  </div>
+
+  <div class="question">
+    <label>3. Which Brazilian state is renowned for its extensive savanna, often referred to as the "Brazilian Outback"?</label>
+    <input type="text" id="q3">
+    <button onclick="checkAnswer(3)">Check</button>
+    <p id="result3"></p>
+  </div>
+
+  <!-- Add more questions similarly -->
+
+  <script>
+    function checkAnswer(questionNumber) {
+      let result = "";
+      const answers = ["Atacama Desert", "Patagonia", "Mato Grosso", "Argentina", "Llanos", "Savannah-like grassland", "Brazil", "Colombia and Venezuela", "Argentina, Paraguay, Bolivia, and Brazil"];
+      const userAnswer = document.getElementById('q' + questionNumber).value.trim();
+
+      if (userAnswer.toLowerCase() === answers[questionNumber - 1].toLowerCase()) {
+        result = "Correct!";
+      } else {
+        result = "Incorrect. The correct answer is: " + answers[questionNumber - 1];
+      }
+
+      document.getElementById('result' + questionNumber).innerText = result;
+    }
+  </script>
+</body>
+</html>
